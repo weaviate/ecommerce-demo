@@ -13,7 +13,7 @@ def get_client():
         return weaviate.connect_to_local(headers=api_key_provider)
     else:
         return weaviate.connect_to_wcs(
-            cluster_url=os.environ.get("WCS_URL"),
-            auth_credentials=weaviate.auth.AuthApiKey(os.environ.get("WCS_API_KEY")),
+            cluster_url=os.environ.get("WEAVIATE_URL"),
+            auth_credentials=weaviate.auth.AuthApiKey(os.environ.get("WEAVIATE_API_KEY")),
             headers=api_key_provider,
         )
