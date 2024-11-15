@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { useCart } from "../contexts/CartContext";
 
-const useProductQuantity = (
+export const useProductQuantity = (
   product_id: string,
   initialQuantity: number = 0,
 ) => {

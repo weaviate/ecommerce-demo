@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 import { TiDelete } from "react-icons/ti";
 
 import { useProductDetails } from "../../../hooks/useProductDetails";
-import useProductQuantity from "../../../hooks/useProductQuantity";
+import { useProductQuantity } from "../../../hooks/useProductQuantity";
 import { useRecommendedProducts } from "../../../hooks/useRecommendedProducts";
 import ProductCard from "../../../components/product/ProductCard";
 import RenderStars from "../../../components/product/RenderStars";
