@@ -28,7 +28,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onFocusChange, largeMode }) => {
     "Garden Tea Party",
     "Pleated Skirt",
     "Matrix Trench Coat",
-    "Sparkly Shirt"
+    "Sparkly Shirt",
   ];
 
   const [index, setIndex] = useState(0);

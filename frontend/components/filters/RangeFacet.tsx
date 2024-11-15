@@ -1,21 +1,12 @@
 import React from "react";
-import Slider from "@mui/material/Slider";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-import { primary } from "../../types/colors";
 import { Facet } from "../../types/searchResponse";
-
-const theme = createTheme({
-  palette: {
-    primary: primary,
-  },
-});
 
 interface RangeFacetProps {
   facet: Facet;
   onApply: () => void;
   onLoad: boolean;
-  onRangeChange: (facet: Facet, newLower: number, newUpper: number) => void;
+  onRangeChange: (facet: Facet, newUpper: number) => void;
 }
 
 const RangeFacet: React.FC<RangeFacetProps> = ({
@@ -29,49 +20,40 @@ const RangeFacet: React.FC<RangeFacetProps> = ({
   const selectedLower = facet.selected_lower ?? lower;
   const selectedUpper = facet.selected_upper ?? upper;
 
-  const handleChange = (event: Event, newValue: number | number[]) => {
-    if (Array.isArray(newValue)) {
-      const [newLower, newUpper] = newValue;
-      onRangeChange(facet, newLower, newUpper);
-    }
-  };
-
-  const handleApply = () => {
-    onApply();
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = Number(event.target.value);
+    onRangeChange(facet, newValue);
   };
 
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <div className="mb-3 flex gap-2 items-end">
         <p className="text-sm text-black">
           {facet.name.charAt(0).toUpperCase() + facet.name.slice(1)}
         </p>
-        <p className="text-xs opacity-50 font-light">{`${selectedLower}$ - ${selectedUpper}$`}</p>
+        <p className="text-xs opacity-50 font-light">{`0$ - ${selectedUpper}$`}</p>
       </div>
 
-      <div style={{ padding: "0 22px" }}>
-        <Slider
-          getAriaLabel={() => facet.name}
-          value={[selectedLower, selectedUpper]}
-          min={lower}
-          max={upper}
-          disabled={onLoad}
-          color="primary"
-          onChange={handleChange}
-          valueLabelDisplay="auto"
-          disableSwap
-        />
-      </div>
+      <input
+        type="range"
+        className="range range-sm"
+        min={lower}
+        max={upper}
+        value={selectedUpper}
+        onChange={handleChange}
+        disabled={onLoad}
+      />
+
       <div className="flex justify-end mt-2">
         <button
           className="btn btn-sm btn-ghost font-normal text-primary hover:bg-transparent hover:underline"
-          onClick={handleApply}
+          onClick={onApply}
           disabled={onLoad}
         >
           Apply
         </button>
       </div>
-    </ThemeProvider>
+    </>
   );
 };
 

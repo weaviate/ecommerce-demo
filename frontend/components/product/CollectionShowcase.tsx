@@ -26,7 +26,7 @@ export default function CollectionShowcase({
   description,
   products,
   imagePath,
-  descriptionEnd
+  descriptionEnd,
 }: CollectionShowcaseProps) {
   return (
     <div className="w-full" style={{ backgroundColor }}>
@@ -43,12 +43,22 @@ export default function CollectionShowcase({
               />
             ))}
             <div className="flex flex-col gap-4 pt-10 px-7">
-              <p className="text-4xl font-bold" style={{ color: accentColor }}>{collectionName}</p>
-              <p className="text-md" style={{ color: accentColor }}>{description}</p>
-              <Link 
-                href={`/search?collection=${collectionName}`} 
+              <p className="text-4xl font-bold" style={{ color: accentColor }}>
+                {collectionName}
+              </p>
+              <p className="text-md" style={{ color: accentColor }}>
+                {description}
+              </p>
+              <Link
+                href={`/search?collection=${collectionName}`}
                 className={`btn`}
-                style={{ color: backgroundColor, borderColor: accentColor, backgroundColor: accentColor} as any}
+                style={
+                  {
+                    color: backgroundColor,
+                    borderColor: accentColor,
+                    backgroundColor: accentColor,
+                  } as any
+                }
               >
                 View Collection
               </Link>
@@ -57,12 +67,22 @@ export default function CollectionShowcase({
         ) : (
           <>
             <div className="flex flex-col gap-4 pt-10 px-7">
-              <p className="text-4xl font-bold" style={{ color: accentColor }}>{collectionName}</p>
-              <p className="text-md" style={{ color: accentColor }}>{description}</p>
-              <Link 
-                href={`/search?collection=${collectionName}`} 
+              <p className="text-4xl font-bold" style={{ color: accentColor }}>
+                {collectionName}
+              </p>
+              <p className="text-md" style={{ color: accentColor }}>
+                {description}
+              </p>
+              <Link
+                href={`/search?collection=${collectionName}`}
                 className={`btn`}
-                style={{ color: backgroundColor, borderColor: accentColor, backgroundColor: accentColor} as any}
+                style={
+                  {
+                    color: backgroundColor,
+                    borderColor: accentColor,
+                    backgroundColor: accentColor,
+                  } as any
+                }
               >
                 View Collection
               </Link>

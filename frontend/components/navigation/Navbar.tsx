@@ -31,8 +31,18 @@ const Navbar: React.FC = () => {
           <h1 className="text-center text-base text-primary">WeCommerce</h1>
         </div>
         <div className="flex items-center gap-10 w-auto justify-end transition-all duration-1000 ease-in-out">
-        <p onClick={() => router.push("/search")} className="text-sm text-gray-500 hover:text-primary cursor-pointer">Shop all</p>
-        <p onClick={() => window.open("https://weaviate.io/", "_blank")} className="text-sm text-gray-500 hover:text-primary cursor-pointer">About Weaviate</p>
+          <p
+            onClick={() => router.push("/search")}
+            className="text-sm text-gray-500 hover:text-primary cursor-pointer"
+          >
+            Shop all
+          </p>
+          <p
+            onClick={() => window.open("https://weaviate.io/", "_blank")}
+            className="text-sm text-gray-500 hover:text-primary cursor-pointer"
+          >
+            About Weaviate
+          </p>
         </div>
         <div
           className={`flex items-center gap-2 ${

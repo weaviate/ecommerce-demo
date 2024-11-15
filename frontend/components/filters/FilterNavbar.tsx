@@ -13,7 +13,7 @@ interface FilterNavbarProps {
   handleRangeFilterApply: (filter: Facet) => void;
   onResetFilter: () => void;
   onLoad: boolean;
-  onRangeChange: (facet: Facet, newLower: number, newUpper: number) => void;
+  onRangeChange: (facet: Facet, newUpper: number) => void;
 }
 
 const FilterNavbar: React.FC<FilterNavbarProps> = ({

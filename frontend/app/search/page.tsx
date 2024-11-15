@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { Facet } from "../../types/searchResponse";
 
 import FilterNavbar from "../../components/filters/FilterNavbar";
@@ -34,15 +34,10 @@ export default function Home() {
     searchActions.createRequest,
   );
 
-  const handleRangeChange = (
-    facet: Facet,
-    newLower: number,
-    newUpper: number,
-  ) => {
+  const handleRangeChange = (facet: Facet, newUpper: number) => {
     searchActions.handleFilterChange(
       {
         ...facet,
-        selected_lower: newLower,
         selected_upper: newUpper,
       },
       false,

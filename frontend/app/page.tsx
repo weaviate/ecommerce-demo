@@ -20,7 +20,14 @@ export default function Home() {
           </div>
         </div>
         <div className="w-1/3 h-full items-center justify-center">
-          <RotatingImages images={["10b791c1-c36c-40d3-923f-fcd772c971cd", "f3c71908-9c02-4bbf-a0cf-493ff8545e67","00ab66a0-880a-46de-837e-4615483c0f59", "7cae6377-c2a1-4b4b-8266-3efbd4185b79"]} />
+          <RotatingImages
+            images={[
+              "10b791c1-c36c-40d3-923f-fcd772c971cd",
+              "f3c71908-9c02-4bbf-a0cf-493ff8545e67",
+              "00ab66a0-880a-46de-837e-4615483c0f59",
+              "7cae6377-c2a1-4b4b-8266-3efbd4185b79",
+            ]}
+          />
         </div>
       </div>
       <div className="justify-center">
@@ -38,20 +45,20 @@ export default function Home() {
             name: "Weave Pullover",
             price: 120,
             product_id: "136e178d-7519-49eb-bf97-4f53296a25f2",
-            brand: "Nova Nest"
+            brand: "Nova Nest",
           },
           {
             name: "Circuit Wristband",
             price: 89.99,
             product_id: "2c50244b-214a-48eb-8953-8ea44cebfa24",
-            brand: "Nova Nest"
+            brand: "Nova Nest",
           },
           {
             name: "Circuit Flex Trousers",
             price: 220,
             product_id: "1b58c1c5-1e9c-4b2b-8feb-57de9730b379",
-            brand: "NixNada"
-          }
+            brand: "NixNada",
+          },
         ]}
         imagePath="/techwear.png"
         descriptionEnd={false}
@@ -66,20 +73,20 @@ export default function Home() {
             name: "Hallowed Herringbone Overcoat",
             price: 249.99,
             product_id: "f3505634-44e2-4931-8e20-0c5ff70c42ce",
-            brand: "Echo & Stitch"
+            brand: "Echo & Stitch",
           },
           {
             name: "Vintage Scholar Pleated Skirt",
             price: 89.99,
             product_id: "1506a2ca-6cde-46c5-ae51-f1981240aec7",
-            brand: "Solemn Chic"
+            brand: "Solemn Chic",
           },
           {
             name: "Scholar's Reprieve Woolen Blouse",
             price: 89.99,
             product_id: "630caa1c-3449-46a6-aaf4-5cf9f64720fc",
-            brand: "Nova Nest"
-          }
+            brand: "Nova Nest",
+          },
         ]}
         imagePath={null}
         descriptionEnd={false}
@@ -94,20 +101,20 @@ export default function Home() {
             name: "Scholarly Charm Blouse",
             price: 58,
             product_id: "66ccf78d-e0b2-45e5-a243-48bc46910980",
-            brand: "Loom & Aura"
+            brand: "Loom & Aura",
           },
           {
             name: "Ivory Intellect Blazer",
             price: 149.99,
             product_id: "e4347552-852f-4088-8e4a-6de5ba1cbbaa",
-            brand: "Loom & Aura"
+            brand: "Loom & Aura",
           },
           {
             name: "Ivory Ponder Prose Skirt",
             price: 55,
             product_id: "f3c71908-9c02-4bbf-a0cf-493ff8545e67",
-            brand: "Nova Nest"
-          }
+            brand: "Nova Nest",
+          },
         ]}
         imagePath={null}
         descriptionEnd={true}
@@ -122,20 +129,20 @@ export default function Home() {
             name: "Space-Age Sequin Top",
             price: 45.99,
             product_id: "7cae6377-c2a1-4b4b-8266-3efbd4185b79",
-            brand: "Vivid Verse"
+            brand: "Vivid Verse",
           },
           {
             name: "Icy Baby Blue Puffer",
             price: 89.99,
             product_id: "18144d23-f6f7-41de-9614-9e1a7db0872d",
-            brand: "Vivid Verse"
+            brand: "Vivid Verse",
           },
           {
             name: "Glide Platforms",
             price: 89.99,
             product_id: "91a7d5d0-18aa-405c-a007-fc672778edeb",
-            brand: "Vivid Verse"
-          }
+            brand: "Vivid Verse",
+          },
         ]}
         imagePath="/y2k.png"
         descriptionEnd={false}
@@ -150,20 +157,20 @@ export default function Home() {
             name: "Blossom Patchwork Vest",
             price: 58,
             product_id: "10b791c1-c36c-40d3-923f-fcd772c971cd",
-            brand: "Loom & Aura"
+            brand: "Loom & Aura",
           },
           {
             name: "Rustic Charm Soft Linen Trousers",
             price: 68,
             product_id: "ac114c7a-9f9d-40e9-b600-0fb6b48dbbc0",
-            brand: "Canvas & Co"
+            brand: "Canvas & Co",
           },
           {
             name: "Sunlit Garden Jumpsuit",
             price: 65.99,
             product_id: "126b06da-36b0-49dc-ae7f-861b632832ec",
-            brand: "Eko & Stitch"
-          }
+            brand: "Eko & Stitch",
+          },
         ]}
         imagePath="/cottagecore.png"
         descriptionEnd={false}

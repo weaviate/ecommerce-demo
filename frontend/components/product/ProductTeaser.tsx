@@ -24,22 +24,26 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   return (
     <Link href={`/product/${product_id}`} passHref>
-          <div className="aspect-square relative group">
-            <Image
-              src={`https://d3o574pyao1sq3.cloudfront.net/fashion/${product_id}.png`}
-              alt="Product Image"
-              className="rounded-sm"
-              width={500}
-              height={500}
-            />
-            <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300 flex items-center justify-center">
-              <div className="flex flex-col items-center gap-2">
-                <p className="text-white text-xl font-bold opacity-100">{name}</p>
-                <p className={`text-white text-md font-bold opacity-100 ${robotoSlab.className}`}>{brand}</p>
-                <p className="text-white text-lg font-bold opacity-100">${price}</p>
-              </div>
-            </div>
+      <div className="aspect-square relative group">
+        <Image
+          src={`https://d3o574pyao1sq3.cloudfront.net/fashion/${product_id}.png`}
+          alt="Product Image"
+          className="rounded-sm"
+          width={500}
+          height={500}
+        />
+        <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300 flex items-center justify-center">
+          <div className="flex flex-col items-center gap-2">
+            <p className="text-white text-xl font-bold opacity-100">{name}</p>
+            <p
+              className={`text-white text-md font-bold opacity-100 ${robotoSlab.className}`}
+            >
+              {brand}
+            </p>
+            <p className="text-white text-lg font-bold opacity-100">${price}</p>
           </div>
+        </div>
+      </div>
     </Link>
   );
 };
