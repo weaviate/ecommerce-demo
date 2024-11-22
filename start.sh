@@ -6,6 +6,8 @@ echo "Starting FastAPI backend..."
 cd backend
 uvicorn main:app --host 0.0.0.0 --port 8000 &
 
+cd ../ &
+
 # Start the Next.js frontend on the public interface
 echo "Starting Next.js frontend..."
 cd frontend
