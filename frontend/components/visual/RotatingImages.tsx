@@ -4,8 +4,8 @@ import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
 interface RotatingImagesProps {
-  images: string[]; // Array of image URLs
-  interval?: number; // Optional interval prop (defaults to 4000ms to match SearchBar)
+  images: string[];
+  interval?: number; 
 }
 
 const RotatingImages: React.FC<RotatingImagesProps> = ({

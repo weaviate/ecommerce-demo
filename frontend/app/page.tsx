@@ -18,7 +18,7 @@ export default function Home() {
           <div className="text-left">
             <Suspense fallback={<div>Loading...</div>}>
             <SearchBar largeMode={true} />
-            </Suspense>s
+            </Suspense>
           </div>
         </div>
         <div className="w-1/3 h-full items-center justify-center">
