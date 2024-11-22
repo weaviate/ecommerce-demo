@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 
 import { usePathname, useRouter } from "next/navigation";
 import { AiOutlineShoppingCart } from "react-icons/ai";
@@ -49,7 +49,9 @@ const Navbar: React.FC = () => {
             isFocused ? "w-1/3 justify-center" : "w-auto justify-end"
           } transition-all duration-1000 ease-in-out`}
         >
+          <Suspense fallback={<div>Loading...</div>}>
           <SearchBar onFocusChange={setIsFocused} />
+          </Suspense>
           <div className="flex ml-5 mr-5">
             <div className={totalItems > 0 ? "indicator" : ""}>
               {totalItems > 0 && (

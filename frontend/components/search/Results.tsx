@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 
 import { useResultsState } from "../../hooks/useResultsState";
 import { SearchResponse } from "../../types/searchResponse";
@@ -74,6 +74,7 @@ const Results: React.FC<Results> = ({ searchResponse, onLoad }) => {
           ))}
         </div>
       )}
+      <Suspense fallback={<div>Loading...</div>}>
       <Pagination
         totalHits={searchResponse.total_hits}
         page={page}
@@ -82,6 +83,7 @@ const Results: React.FC<Results> = ({ searchResponse, onLoad }) => {
         setSize={setSize}
         onLoad={onLoad}
       />
+      </Suspense>
     </div>
   );
 };

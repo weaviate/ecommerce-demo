@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 
 import SearchBar from "../components/search/Searchbar";
 import CollectionShowcase from "../components/product/CollectionShowcase";
@@ -16,7 +16,9 @@ export default function Home() {
             weaviate for ecommerce
           </p>
           <div className="text-left">
+            <Suspense fallback={<div>Loading...</div>}>
             <SearchBar largeMode={true} />
+            </Suspense>s
           </div>
         </div>
         <div className="w-1/3 h-full items-center justify-center">

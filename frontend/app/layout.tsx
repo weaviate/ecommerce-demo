@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Suspense } from "react";
 
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
@@ -24,7 +25,9 @@ export default function RootLayout({
       <body className={roboto.className}>
         <CartProvider>
           <Navbar />
-          {children}
+          <Suspense fallback={<div>Loading...</div>}>
+            {children}
+          </Suspense>
 
           <footer className="w-full p-4 bg-black border-t shadow md:flex md:items-center md:justify-between md:p-6">
             <span className="flex flex-row text-sm text-white sm:text-center">
