@@ -4,9 +4,9 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-import indexer
-import searcher
-import models
+import backend.indexer as indexer
+import backend.searcher as searcher
+import backend.models as models
 
 app = FastAPI()
 

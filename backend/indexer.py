@@ -5,8 +5,8 @@ import weaviate.classes as wvc
 from dotenv import load_dotenv
 from loguru import logger
 
-import connection
-import models
+import backend.connection as connection
+import backend.models as models
 
 load_dotenv()
 

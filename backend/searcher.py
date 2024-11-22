@@ -6,8 +6,8 @@ import weaviate.classes as wvc
 from loguru import logger
 from weaviate.collections.classes.aggregate import AggregateText, AggregateNumber
 
-import models
-import connection
+import backend.models as models
+import backend.connection as connection
 
 client = connection.get_client()
 product_collection = client.collections.get("fashion")
