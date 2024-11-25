@@ -1,3 +1,5 @@
+"use server";
+
 import { emptyProduct } from "../../types/productResponse";
 import { RecommendationRequest } from "../../types/recommendationRequest";
 import {
