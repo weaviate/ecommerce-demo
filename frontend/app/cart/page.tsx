@@ -23,6 +23,11 @@ export default function CartPage() {
 
   useEffect(() => {
     const fetchProductDetails = async () => {
+      if (cartItems.length === 0) {
+        setCartItemDetails([]);
+        return;
+      }
+
       const details = await Promise.all(
         cartItems.map(async (item) => {
           const product = await getProduct(item.product_id);

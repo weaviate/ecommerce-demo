@@ -1,4 +1,3 @@
-// hooks/useProductDetails.ts
 import { useEffect, useState } from "react";
 
 import { getRecommendations } from "../components/search/actions";
