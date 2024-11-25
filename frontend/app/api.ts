@@ -1,17 +1,45 @@
 "use server";
 
-import { emptyProduct } from "../../types/productResponse";
-import { RecommendationRequest } from "../../types/recommendationRequest";
+import { emptyProduct } from "../types/productResponse";
+import { RecommendationRequest } from "../types/recommendationRequest";
 import {
   emptyRecommendationResponse,
   RecommendationResponse,
-} from "../../types/recommendationResponse";
-import { SearchRequest } from "../../types/searchRequest";
-import { emptySearchResponse } from "../../types/searchResponse";
+} from "../types/recommendationResponse";
+import { SearchRequest } from "../types/searchRequest";
+import { emptySearchResponse } from "../types/searchResponse";
+
+const checkUrl = async (url: string): Promise<boolean> => {
+  try {
+    const response = await fetch(url);
+    return response.ok;
+  } catch (error) {
+    console.error(`Failed to fetch from ${url}:`, error);
+    return false;
+  }
+};
+
+export const detectHost = async (): Promise<string> => {
+  const localUrl = "http://localhost:8000/health";
+  const rootUrl = "http://127.0.0.1:8000/health";
+
+  const isLocalHealthy = await checkUrl(localUrl);
+  if (isLocalHealthy) {
+    return "http://localhost:8000";
+  }
+
+  const isRootHealthy = await checkUrl(rootUrl);
+  if (isRootHealthy) {
+    return "http://127.0.0.1:8000";
+  }
+
+  throw new Error("Both health checks failed, please check the Magic Server");
+};
 
 export async function search(searchRequest: SearchRequest): Promise<any> {
   try {
-    const response = await fetch("http://localhost:8000/search", {
+    const host = await detectHost();
+    const response = await fetch(`${host}/search`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -33,12 +61,10 @@ export async function search(searchRequest: SearchRequest): Promise<any> {
 
 export async function getProduct(product_id: string): Promise<any> {
   try {
-    const response = await fetch(
-      "http://localhost:8000/product/" + product_id,
-      {
-        method: "GET",
-      },
-    );
+    const host = await detectHost();
+    const response = await fetch(`${host}/product/${product_id}`, {
+      method: "GET",
+    });
 
     if (!response.ok) {
       return emptyProduct;
@@ -65,7 +91,8 @@ export async function getRecommendations(
       page: 1,
     };
 
-    const response = await fetch("http://localhost:8000/recommend", {
+    const host = await detectHost();
+    const response = await fetch(`${host}/recommend`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

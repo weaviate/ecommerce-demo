@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { getProduct } from "../components/search/actions";
+import { getProduct } from "../app/api";
 import { emptyProduct, Product } from "../types/productResponse";
 
 export function useProductDetails(productID: string) {

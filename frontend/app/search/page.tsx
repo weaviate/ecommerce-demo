@@ -9,7 +9,7 @@ import Results from "../../components/search/Results";
 import { useSearchActions } from "../../hooks/useSearchActions";
 import { useSearchEffects } from "../../hooks/useSearchEffects";
 import { useSearchState } from "../../hooks/useSearchState";
-import { search } from "../../components/search/actions";
+import { search } from "../api";
 
 export default function Home() {
   const searchState = useSearchState();

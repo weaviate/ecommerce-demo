@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { getRecommendations } from "../components/search/actions";
+import { getRecommendations } from "../app/api";
 import {
   emptyRecommendationResponse,
   RecommendationResponse,

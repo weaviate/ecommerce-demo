@@ -8,7 +8,7 @@ import ProductCard from "../../components/product/ProductCard";
 import { useCart } from "../../contexts/CartContext";
 import { useRecommendedProducts } from "../../hooks/useRecommendedProducts";
 import { CartItemWithDetails } from "../../types/cartContext";
-import { getProduct } from "../../components/search/actions";
+import { getProduct } from "../api";
 
 export default function CartPage() {
   const { cartItems, clearCart } = useCart();

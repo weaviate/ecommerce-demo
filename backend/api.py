@@ -3,6 +3,8 @@ from uuid import UUID
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+
 
 import backend.indexer as indexer
 import backend.searcher as searcher
@@ -37,6 +39,10 @@ async def search(search_request: models.SearchRequest):
 @app.post("/recommend", response_model=models.RecommendResponse)
 async def recommend(recommend_request: models.RecommendRequest):
     return searcher.recommend(recommend_request)
+
+@app.get("/health")
+async def health_check():
+    return JSONResponse(status_code=200, content={"connected": True})
 
 
 if __name__ == "__main__":
