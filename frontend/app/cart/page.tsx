@@ -8,6 +8,7 @@ import ProductCard from "../../components/product/ProductCard";
 import { useCart } from "../../contexts/CartContext";
 import { useRecommendedProducts } from "../../hooks/useRecommendedProducts";
 import { CartItemWithDetails } from "../../types/cartContext";
+import { getProduct } from "../../components/search/actions";
 
 export default function CartPage() {
   const { cartItems, clearCart } = useCart();
@@ -24,10 +25,7 @@ export default function CartPage() {
     const fetchProductDetails = async () => {
       const details = await Promise.all(
         cartItems.map(async (item) => {
-          const response = await fetch(
-            `http://localhost:8000/product/${item.product_id}`,
-          );
-          const product = await response.json();
+          const product = await getProduct(item.product_id);
           return { ...item, product, loading: false };
         }),
       );
